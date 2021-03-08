@@ -1,5 +1,6 @@
 # <center>Data Management Final Project</center>
-## <center>John Golliher | March 7, 2021</center>
+### <center>Kyle Cunningham, John Golliher, Kizer Harris, and Kenny Miller</center>
+### <center>March 7, 2021</center>
 
 ## Assignment
 
