@@ -143,8 +143,11 @@ This will give the same output as SAS as they follow the same process for obtain
 ## Syntax
 
 This is text.
+
 *This is italicized text*
+
 **This is bolded text**
+
 `This is text that looks like code`
 
 ```{Python
@@ -155,13 +158,19 @@ This is a code chunk
 
 ## Libraries/Functions
 
-This is text.
-*This is italicized text*
-**This is bolded text**
-`This is text that looks like code`
+*Python* is an extremely useful tool when it comes to the libraries that it provides. Libraries in Python do not hold files of data, but rather contain pre-combined code that drastically cut down the time needed to code.  These libraries, unlike *SAS*, have to be installed and then loaded into each python session before being utilized.  For example, you would download *pandas* in your terminal with a code such as `pip3 install pandas`.  Then you would load the library in Python with the command: `import pandas as pd`. The libraries in Python are extremely broad and allow for a multitude of data manipulation.  Some of the most popular libraries in Python are Numpy, Pandas, and Matplotlib.  These libraries are extremely beneficial opposed to what SAS has to offer as they allow for great data visualization. 
+
+The functions within the libraries are used to perform certain tasks very similar to SAS.  SAS has generic functions already and so does Python.  However, Python can run certain functions within the different libraries.  For example if you wanted to create a data frame using the pandas command your function would be `pd.Dataframe()`.  Functions can also be created in python quite easily.  Then they will only be used when they are called.  For example, below a function called `foo` has been created that returns certain messages based upon the value of ‘x’. 
+
 
 ```{Python
-This is a code chunk
+def foo(x):
+	if(x == 1 ):
+		return('hello')
+	elif(x == 2):
+		return('world')
+	elif(x == 3):
+		return("!")
 ```
 
 ***
@@ -169,8 +178,11 @@ This is a code chunk
 ## Variables 
 
 This is text.
+
 *This is italicized text*
+
 **This is bolded text**
+
 `This is text that looks like code`
 
 ```{Python
@@ -183,8 +195,11 @@ This is a code chunk
 
 
 This is text.
+
 *This is italicized text*
+
 **This is bolded text**
+
 `This is text that looks like code`
 
 ```{Python
