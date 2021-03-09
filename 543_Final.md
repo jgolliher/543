@@ -141,18 +141,14 @@ This will give the same output as SAS as they follow the same process for obtain
 ***
 
 ## Syntax
+The table below shows some common syntax comparisons of SAS and Python.
 
-This is text.
-
-*This is italicized text*
-
-**This is bolded text**
-
-`This is text that looks like code`
-
-```{Python
-This is a code chunk
-```
+| | SAS | Python |
+| --- | --- | --- |
+| End Line | A semicolon is required as a line separator: `;` | N/A |
+| Case Sensitivity | Not Case Sensitive | Case Sensitive |
+| Commenting | `*This is a comment;` or `/* This is a comment */` | `# This is a comment` |
+| Run Statement | `Run;` This is required at the end of each procedural step. | N/A |
 
 ***
 
@@ -193,17 +189,66 @@ This is a code chunk
 
 ## Flow Control
 
+**Selection/Decision Control Statements**
 
-This is text.
+Below are code chunks showing the use of if-else statements for both Python and SAS. The if statement is a conditional statement that will perform an action if the conditional statement is true. The body of elif is executed when the if conditional is false and elif is true. The body of else is used if the if and elif are both false. The if and else statements for SAS work in the same way as Python.
 
-*This is italicized text*
-
-**This is bolded text**
-
-`This is text that looks like code`
-
+*Python*
 ```{Python
-This is a code chunk
+if x == y:
+   print("Both are Equal")
+elif x > y:
+    print("x is greater than y")
+else:
+    print("x is smaller than y")
+```
+*SAS*
+```{SAS
+if x=0 then
+     if y ne 0 then put 'X ZERO, Y NONZERO'; 
+     else put 'X ZERO, Y ZERO';
+else put 'X NONZERO';
+```
+
+**Repetition Loops**
+
+Both the for loop in Python and the Do Statement in SAS work in the same manner. They will iterate over a list and perform an action for each item in the list.
+
+*Python - For Loop*
+```{Python
+for j in range(0,10):
+    print(j, end = " ")
+```
+
+*SAS - Do Statement*
+```{SAS
+data A;
+do i = 1 to 5;
+   y = i**2; /* values are 1, 4, 9, 16, 25 */
+   output;
+end;
+run;
+```
+
+The While Loop and Do While Loop will execute the statements in the loop until the while condition is satisfied. This is constantly checked until it is false. Typically there is an iterator that determines the number of times the statements in the loop will be performed.
+
+*Python - While Loop*
+```{Python
+m = 5
+i = 0
+while i < m:
+     print(i, end = " ")
+     i = i + 1
+print("End")
+```
+
+*SAS - Do While Statement*
+```{SAS
+n=0;
+   do while(n<5);
+      put n=;
+      n+1;
+   end;
 ```
 
 ***
