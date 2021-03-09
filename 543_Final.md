@@ -136,5 +136,3 @@ This is a code chunk
 ```
 
 ***
-
-
