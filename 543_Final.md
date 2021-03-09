@@ -80,7 +80,63 @@ This is a code chunk
 
 ## Data Analysis
 
-Depending on the goal 
+Once data has been imported and manipulated to user specifications in either *SAS* or *Python*, the next step is analysis. Nearly every type of analysis that can be done in *SAS* can be done in *Python* and vice-versa. 
+
+Let's say, that for example, you wish to run *Ordinary Least Squares Regression* on the **SECswim** data to predict a swimmer's `PrelimTime` (the time he/she swam in the preliminary heats) from his/her `SeedTime` (the time he/she was entered into the meet with). 
+
+For the purpose of this illustration we will use `LogSeedTime` and `LogPrelimTime` as the data must be transformed via *the natural log* to better explain the variation.
+
+**SAS Code**
+
+```{SAS}
+PROC REG DATA=jg.swim;
+	MODEL LogPrelimTime = LogSeedTime;
+RUN;
+```
+<center>
+Analysis of Variance
+
+| Source         | DF   | SSE       | MSE       | F Value   | Pr > F    |
+| ---------------| -----|-----------|-----------|-----------|-----------|
+| Model          | 1    | 922.12459 | 922.12459 | 4001570   |<.0001     |
+| Error          | 1763 | 0.040627  | 0.00023044|           |           |
+| Corrected Total| 1764 | 922.53086 |           |           |           |
+
+
+| Description    | Value   | 
+| ---------------| --------|
+| Root MSE       | 0.01518 | 
+| Dependent Mean | 4.45193 | 
+| Coeff Var      | 0.34098 | 
+| R-Square       | 0.9996  | 
+| Adj R-Square   | 0.9996  | 
+
+Parameter Estimates
+
+| Variable    | DF| Para Est.| Std. Err. | t Value | Pr > t|
+| ------------|--- |----------|-----------|---------|---------|
+| Intercept   | 1 | -0.00583 | 0.00226   | -2.58   | 0.0099  |
+| LogSeedTime | 1 | 1.00005  | 0.00049993| 2000.39 | <.0001  |
+
+
+</center>
+
+One of the convienent things about *SAS* is that it gives you all of this output as soon as you run the *OLS* model. Furthermore, it gives you the *diagnostic plots*, *residuals plot*, and the *fit plot*. This is a difference over *Python*, which will require you to ask for each of these one-by-one. 
+
+**Python Code**
+
+```{Python}
+mport pandas as pd 
+import statsmodels.formula.api as sm 
+
+SEC = pd.read_csv('SECswim.csv')
+
+
+result = sm.ols(formula="LogPrelimTime ~ LogSeedTime",data=SEC).fit()
+print(result.params)
+print(result.summary())
+```
+This will give the same output as SAS as they follow the same process for obtaining *OLS*. The biggest difference being that *Python* requires users to import secondary libraries in order to accomplish *OLS* while *SAS* can do it natively. 
 
 ***
 
