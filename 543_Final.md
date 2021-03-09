@@ -63,7 +63,78 @@ A convenient piece of Python is its use of more specified functions for reading 
 
 That is not to say, however, that the Python command lacks the ability to specify arguments. Quite the contrary, really. 
 
+***
+
+## Data Manipulation
+
+This is text.
+*This is italicized text*
+**This is bolded text**
+`This is text that looks like code`
+
+```{Python
+This is a code chunk
+```
+
+***
+
+## Data Analysis
+
+Depending on the goal 
+
+***
+
+## Syntax
+
+This is text.
+*This is italicized text*
+**This is bolded text**
+`This is text that looks like code`
+
+```{Python
+This is a code chunk
+```
+
+***
+
+## Libraries/Functions
+
+This is text.
+*This is italicized text*
+**This is bolded text**
+`This is text that looks like code`
+
+```{Python
+This is a code chunk
+```
+
+***
+
+## Variables 
+
+This is text.
+*This is italicized text*
+**This is bolded text**
+`This is text that looks like code`
+
+```{Python
+This is a code chunk
+```
+
+***
+
+## Flow Control
 
 
+This is text.
+*This is italicized text*
+**This is bolded text**
+`This is text that looks like code`
+
+```{Python
+This is a code chunk
+```
+
+***
 
 
